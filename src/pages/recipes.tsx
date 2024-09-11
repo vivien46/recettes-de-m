@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import Layout from "@/components/Layout";
 import Link from "next/link";
-import { query } from "../../lib/db";
+import { query } from "@/lib/db";
 import { readFile } from "fs";
 
 interface Recipe {
@@ -16,7 +16,7 @@ interface Recipe {
 
 export const getServerSideProps: GetServerSideProps = async () => {
 
-    const res = await query('SELECT * FROM "Recipes"');
+    const res = await query('SELECT * FROM "Recipes" ORDER BY "id" ASC');
     const recipes = res.rows.map((recipe: Recipe) => ({
     ...recipe,
     createdAt: new Date(recipe.createdAt).toISOString(),
@@ -46,10 +46,14 @@ const Recipes = ({ recipes }: { recipes: Recipe[] }) => {
                         <li key={recipe.id} className="border p-4 rounded-lg shadow-sm">
                             <h2 className="text-2xl font-semibold">{recipe.title}</h2>
                             <div>
-                                <img src={recipe.imageUrl} alt={recipe.title} className="w-48 h-48 object-cover mt-4" />
+                            {recipe.imageUrl ? (
+                                    <img src={`/images/recipies/${recipe.imageUrl}`} alt={recipe.title} className="w-48 h-48 object-cover mt-4" />
+                                ) : (
+                                    <p className="text-gray-500">Aucune image pour cette recette</p>
+                                )}
                             </div>
                             <p className="text-gray-600">{recipe.description}</p>
-                            <p>{recipe.instructions}</p>
+                            <p className="whitespace-pre-line">{recipe.instructions}</p>
                             <p>Créé le : {new Date(recipe.createdAt).toLocaleDateString()} à {new Date(recipe.createdAt).toLocaleTimeString()}</p>
               {recipe.updatedAt && <p>Mis à jour le : {new Date(recipe.updatedAt).toLocaleDateString()}</p>}
                         </li>
