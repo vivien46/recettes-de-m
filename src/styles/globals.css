@@ -31,3 +31,27 @@
     text-wrap: balance;
   }
 }
+
+.text-balance {
+  text-wrap: balance;
+}
+.michel-text {
+  font-size: 1.5rem; 
+  color: #FF7043; 
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); 
+  font-family: 'Dancing Script', cursive;
+  font-style: italic;
+  cursor: pointer; 
+  font-weight: bold; 
+  letter-spacing: 1px; 
+  transition: transform 0.3s ease-in-out; 
+}
+
+.michel-text:hover {
+  transform: scale(1.1); 
+  color: #FFA726; 
+}
+
+.parallax-header{
+background-image: url("/images/recipies/photo1.jpg");
+}
