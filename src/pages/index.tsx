@@ -4,6 +4,12 @@ import Layout from "../components/Layout";
 
 const inter = Inter({ subsets: ["latin"] });
 
+const recipe = {
+  title: "Recette de cuisine",
+  description: "Description de la recette",
+  image: "/assets/images sample/food.jpg",
+};
+
 export default function Home() {
   return (
     <Layout>
@@ -13,13 +19,17 @@ export default function Home() {
           Découvrez des recettes délicieuses et faciles à réaliser.
         </p>
 
+        <div className="flex flex-wrap flex-col border border-red-600">
         <Image
-          src="/images/food.jpg"
+          src={recipe.image}
           alt="Des plats de cuisine"
           width={200}
           height={200}
-          className="mt-8"
+          className="m-8"
         />
+        <p>{recipe.title}</p>
+        <p>{recipe.description}</p>
+        </div>
 
         <p className="mt-8">
           <a

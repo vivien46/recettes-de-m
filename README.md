@@ -1,5 +1,15 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Prerequisites
+
+Before you begin, make sure you have installed the following:
+
+- [Node.js](https://nodejs.org/) (version 14.x or higher)
+- [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/) (version 6.x or higher)
+- [PostgreSQL](https://www.postgresql.org/) (version 12 or higher)
+- An account on [Vercel](https://vercel.com/) for deployment
+
+
 ## Getting Started
 
 First, run the development server:
@@ -17,6 +27,20 @@ bun dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+
+you add to copy .env.sample file to .env and fill it like you need e.g
+
+##### sample of .env file
+
+```env
+DATABASE_USER = 'user'
+DATABASE_HOST = 'localhost'
+DATABASE_NAME = 'database_db'
+DATABASE_PASSWORD = 'userpassword'
+DATABASE_PORT = '12345'
+```
+
+##### API Routes #######
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
