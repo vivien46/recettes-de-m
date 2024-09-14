@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { FaFacebook, FaInstagram, FaLock } from "react-icons/fa";
+import { FaLock } from "react-icons/fa";
 
 const Layout = ({ children }: { children: React.ReactNode }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -75,10 +75,10 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               À propos
             </Link>
 
-            <a href="#" className="text-orange-700 hover:text-orange-400 transition duration-200">
+            <Link href="#" className="text-orange-700 hover:text-orange-400 transition duration-200">
               <FaLock className="h-5 w-5" />
               
-            </a>
+            </Link>
           </div>
         </nav>
 
@@ -98,8 +98,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
               <Link href="/about" className="block text-sm font-semibold leading-6 text-white hover:text-orange-500 transition duration-300">
                 À propos
               </Link>
-              <Link href="/login" className="block text-sm font-semibold leading-6 text-white hover:text-orange-500 transition duration-300" />
-              <FaLock className="w-auto" />
+              <Link href="/login" className="block text-sm font-semibold leading-6 text-white hover:text-orange-500 transition duration-300">
+                 <FaLock className="w-auto" />
+              </Link>
             </div>
           </div>
         )}

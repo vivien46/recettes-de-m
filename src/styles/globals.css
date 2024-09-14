@@ -69,7 +69,7 @@
 
 /* Styles pour la section parallax */
 .parallax-header {
-  background-image: url("../../public/images/recipies/unsplash.jpg");
+  background-image: url("/assets/header/header.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
